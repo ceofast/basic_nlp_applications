@@ -224,13 +224,13 @@ data.head()
 
 data.info()
 
-# Büyük - Küçük Dönüşümü
+# Uppercase to Lowercase Conversion
 
 data["Phrase"].apply(lambda x: " ".join(x.lower() for x in x.split()))
 
 data["Phrase"] = data["Phrase"].apply(lambda x: " ".join(x.lower() for x in x.split()))
 
-# Noktalama İşaretleri
+# Punctuation
 
 data["Phrase"].str.replace('[^\w\s]', '')
 
@@ -254,7 +254,7 @@ data["Phrase"].apply(lambda x: " ".join(x for x in x.split() if x not in sw))
 
 data["Phrase"] = data["Phrase"].apply(lambda x: " ".join(x for x in x.split() if x not in sw))
 
-# Seyreklerin Silinmesi
+# Deletion of Infrequent
 
 pd.Series(' '.join(data["Phrase"]).split()).value_counts()[-1000:]
 
@@ -274,7 +274,7 @@ data["Phrase"] = data["Phrase"].apply(lambda x: " ".join([Word(word).lemmatize()
 
 data["Phrase"].head(10)
 
-# Terim Frekansı
+# Term Frequency
 
 tf1 = (data["Phrase"]).apply(lambda x: pd.value_counts(x.split(" "))).sum(axis=0).reset_index()
 
@@ -324,7 +324,7 @@ plt.show()
 
 wordcloud.to_file("kelime_bulutu.png");
 
-# Tüm Metin
+# All Text
 
 text = " ".join(i for i in data.Phrase)
 
@@ -336,7 +336,7 @@ plt.imshow(wordcloud)
 plt.axis("off")
 plt.show()
 
-## Şablonlara Göre Word Cloud ##
+## Word Cloud by Templates ##
 
 nlp_mask = np.array(Image.open("/Users/cenancanbikmaz/PycharmProjects/DSMLBC-7/HAFTA_11/nlp.png"))
 
@@ -354,7 +354,7 @@ plt.imshow(wc)
 plt.axis("off")
 plt.show()
 
-## Sentiment Analizi ve Sınıflandırma Modelleri ##
+## Sentiment Analysis and Classification Models ##
 
 from textblob import TextBlob
 from sklearn import model_selection, preprocessing, linear_model, naive_bayes, metrics
