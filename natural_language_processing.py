@@ -218,7 +218,7 @@ ff
 
 import pandas as pd
 
-data = pd.read_csv("/Users/cenancanbikmaz/PycharmProjects/DSMLBC-7/HAFTA_11/train.tsv", sep="\t")
+data = pd.read_csv("train.tsv", sep="\t")
 
 data.head()
 
@@ -306,7 +306,7 @@ from PIL import Image
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("/Users/cenancanbikmaz/PycharmProjects/DSMLBC-7/HAFTA_11/train.tsv", sep="\t")
+data = pd.read_csv("train.tsv", sep="\t")
 data.head()
 text = data["Phrase"][0]
 
@@ -366,7 +366,7 @@ from keras.preprocessing import text, sequence
 from keras import layers, models, optimizers
 
 import pandas as pd
-data = pd.read_csv("/Users/cenancanbikmaz/PycharmProjects/DSMLBC-7/HAFTA_11/train.tsv", sep = "\t")
+data = pd.read_csv("train.tsv", sep = "\t")
 
 data.head()
 
